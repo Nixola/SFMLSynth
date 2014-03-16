@@ -7,8 +7,9 @@ local r = f:read '*a'
 
 f:close()
 
-r = r:gsub("//.-\n", "")
-r = r:gsub("*p*", 1000)
+r = r:gsub("^.-///", "") -- triple slash means "start from here"
+r = r:gsub("//.-\n", "") -- double slash means "skip from here to the end of the line"
+r = r:gsub("*p*", 1000)  -- this allows you to use *p* as pause for clarity, instead of 1000
 
 local command = './main'
 local tot = ''
