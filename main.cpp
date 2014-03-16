@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define BUFFSIZE 44100
+#define BUFFSIZE 1536
 #define twoto15 32768
 #define TAU 6.28
 #define RATE 44100
