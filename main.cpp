@@ -11,7 +11,6 @@
 #define TAU 6.28
 #define RATE 44100
 #define halftone 1.0594630943593
-#define DAMPENING 5000.0
 
 //using namespace std;
 
@@ -45,7 +44,9 @@ class Sine : public sf::SoundStream {
 
         }
 
-        virtual void onSeek(sf::Time timeOffset) {
+        virtual void onSeek(sf::Time position) {
+
+            samplesN = (int) position.asSeconds()*RATE;
 
             return;
 
@@ -70,7 +71,7 @@ int main(int argC, char** argV) {
     if (argC >= 2)
         freq = (float) atoi(argV[1]);
     else
-        freq = 440;
+        freq = 48;
 
     if (argC >= 3)
         tim = atoi(argV[2]);
