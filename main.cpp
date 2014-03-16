@@ -112,8 +112,8 @@ int threadFunc() {
             m = freq/RATE*TAU;
             for (i = 0; i < BUFFSIZE; i++) {
                 sine.samplesN++;
-                //Buffer[i] = (short int) ((sin(sine.samplesN*m)+sin(sine.samplesN*m/2)+sin(sine.samplesN*m*2)+sin(sine.samplesN*m*4))/4*twoto15);
-                Buffer[i] = (short int) (sin(sine.samplesN*m)*twoto15);
+                Buffer[i] = (short int) ((sin(sine.samplesN*m)+sin(sine.samplesN*m/2)+sin(sine.samplesN*m*2)+sin(sine.samplesN*m*4))/4*twoto15);
+                //Buffer[i] = (short int) (sin(sine.samplesN*m)*twoto15);
             }
 
             generate = false;
